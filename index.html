@@ -7,40 +7,30 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f2f2f0;min-height:100vh;padding:1.25rem 1rem 4rem;}
-.container{max-width:640px;margin:0 auto;}
-
-/* Hero */
+.container{max-width:660px;margin:0 auto;}
 .hero{background:#f86e6e;border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:8px;}
 .hero h2{font-size:22px;font-weight:600;color:#fff;margin-bottom:4px;}
-.hero-sub{display:flex;align-items:center;gap:5px;margin-top:4px;}
+.hero-sub{display:flex;align-items:center;gap:5px;}
 .hero-sub span{font-size:12px;color:rgba(255,255,255,0.6);}
 .hero-sub a{font-size:12px;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.5);}
-.hero-sub a:hover{border-bottom-color:#fff;}
-
-/* Privacy */
+.mode-tabs{display:flex;gap:6px;margin-top:12px;}
+.mode-tab{background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.25);border-radius:99px;padding:6px 18px;font-size:13px;color:rgba(255,255,255,0.8);cursor:pointer;font-weight:500;}
+.mode-tab.active{background:#fff;color:#f86e6e;border-color:#fff;}
 .privacy-note{font-size:11px;color:#848b96;background:#fff;border-radius:8px;padding:9px 12px;margin-bottom:1.25rem;border:0.5px solid #e8eaed;display:flex;gap:8px;align-items:flex-start;line-height:1.5;}
-
-/* Add button */
 .add-btn{background:#f86e6e;border:none;border-radius:8px;padding:10px 20px;cursor:pointer;font-size:13px;color:#fff;font-weight:500;margin-bottom:1.25rem;display:block;}
 .add-btn:hover{background:#e05858;}
-.add-btn:active{transform:scale(0.98);}
-
-/* Cat card */
-.cat-card{background:#fff;border:0.5px solid #ddddd8;border-radius:14px;margin-bottom:14px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.05);}
+.cat-card{background:#fff;border:0.5px solid #ddddd8;border-radius:14px;margin-bottom:16px;overflow:hidden;}
 .cat-card-top{background:#40444d;padding:16px;}
 .field-label{font-size:10px;color:rgba(255,255,255,0.55);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;}
 .name-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
 .name-input{flex:1;min-width:0;background:#fff;border:2px solid #fff;border-radius:8px;padding:10px 13px;font-size:16px;font-weight:500;color:#40444d;outline:none;width:100%;}
 .name-input::placeholder{color:#b8bcc4;font-weight:400;}
 .name-input:focus{border-color:#f86e6e;box-shadow:0 0 0 3px rgba(248,110,110,0.18);}
-.breed-select{width:100%;background:#fff;border:2px solid #fff;border-radius:8px;padding:10px 36px 10px 13px;font-size:14px;color:#40444d;outline:none;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23848b96' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;}
-.breed-select:focus{border-color:#f86e6e;}
-.breed-select option{background:#fff;color:#40444d;}
-.breed-select optgroup{background:#f7f8fa;color:#848b96;}
+.breed-select,.condition-select{width:100%;background:#fff;border:2px solid #fff;border-radius:8px;padding:10px 36px 10px 13px;font-size:14px;color:#40444d;outline:none;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23848b96' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;}
+.breed-select:focus,.condition-select:focus{border-color:#f86e6e;}
+.condition-select{background-color:#fff;border:1.5px solid #e8e8e4;margin-bottom:10px;}
 .remove-btn{flex-shrink:0;background:rgba(248,110,110,0.18);border:none;cursor:pointer;font-size:16px;color:#f86e6e;width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;}
 .remove-btn:hover{background:rgba(248,110,110,0.35);}
-
-/* Card body */
 .cat-card-body{padding:14px 16px;}
 .stage-section-label{font-size:10px;color:#848b96;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
 .stage-row{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;}
@@ -49,56 +39,56 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .stage-btn.active{background:#f86e6e;border-color:#f86e6e;color:#fff;font-weight:600;}
 .sb-label{display:block;font-size:12px;}
 .sb-range{display:block;font-size:9px;opacity:.7;margin-top:1px;}
-.stage-meta{font-size:11px;color:#848b96;background:#f7f8f5;border-radius:8px;padding:7px 12px;margin-bottom:14px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;line-height:1.5;}
+.stage-meta{font-size:11px;color:#848b96;background:#f7f8f5;border-radius:8px;padding:7px 12px;margin-bottom:16px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;line-height:1.5;}
 .stage-dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:5px;flex-shrink:0;}
-
-/* Cost grid */
-.cost-grid-instruction{font-size:11px;color:#848b96;font-style:italic;margin-bottom:10px;}
-.cost-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:8px;}
-.cost-item{border-radius:10px;padding:10px 12px;}
-.cost-item.food{background:#fff5f5;border:0.5px solid #ffd0d0;}
-.cost-item.vet{background:#f0f4ff;border:0.5px solid #c8d4f8;}
-.cost-item.grooming{background:#f3f0ff;border:0.5px solid #d4caf8;}
-.cost-item.toys{background:#fff8ed;border:0.5px solid #fad99a;}
-.cost-item.litter{background:#edfaf3;border:0.5px solid #9fe1c8;}
-.cost-item.meds{background:#fef2f2;border:0.5px solid #f5c4c4;}
-.cost-item label{font-size:11px;font-weight:600;display:block;margin-bottom:6px;}
-.cost-item.food label{color:#c04040;}
-.cost-item.vet label{color:#3a5fc8;}
-.cost-item.grooming label{color:#6040c8;}
-.cost-item.toys label{color:#b06010;}
-.cost-item.litter label{color:#1a8055;}
-.cost-item.meds label{color:#b03030;}
-.php-input-wrap{display:flex;align-items:center;gap:4px;}
-.php-prefix{font-size:11px;font-weight:500;white-space:nowrap;color:#c8cdd5;}
-.cost-input{width:100%;border:none;background:transparent;font-size:16px;font-weight:500;color:#40444d;outline:none;padding:0;min-width:0;border-bottom:1.5px dashed #ddd;}
-.cost-input:focus{border-bottom:1.5px solid #f86e6e;}
-.cost-input::placeholder{color:#ccc;font-weight:400;font-style:italic;}
-.cost-hint{font-size:10px;color:#a0a5ad;margin-top:5px;display:flex;justify-content:space-between;align-items:center;gap:4px;}
-.avg-badge{font-size:9px;background:#efefed;border-radius:99px;padding:1px 7px;color:#a0a5ad;white-space:nowrap;flex-shrink:0;}
-.avg-badge.live{background:#edfaf3;color:#1a8055;}
+.cat-section{border:0.5px solid #e8e8e4;border-radius:10px;margin-bottom:10px;overflow:hidden;}
+.cat-section-header{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;background:#f7f8f5;cursor:pointer;user-select:none;}
+.cat-section-header:hover{background:#f0f0ec;}
+.section-title-row{display:flex;align-items:center;gap:8px;}
+.section-title{font-size:13px;font-weight:600;color:#40444d;}
+.section-subtitle{font-size:11px;color:#a0a5ad;margin-right:8px;}
+.toggle-switch{position:relative;width:32px;height:18px;flex-shrink:0;}
+.toggle-switch input{opacity:0;width:0;height:0;position:absolute;}
+.toggle-slider{position:absolute;inset:0;background:#ddd;border-radius:99px;cursor:pointer;transition:background .2s;}
+.toggle-slider:before{content:'';position:absolute;width:13px;height:13px;left:3px;top:2.5px;background:#fff;border-radius:50%;transition:transform .2s;}
+.toggle-switch input:checked+.toggle-slider{background:#f86e6e;}
+.toggle-switch input:checked+.toggle-slider:before{transform:translateX(13px);}
+.cat-section-body{padding:12px 14px;}
+.option-list{display:flex;flex-direction:column;gap:7px;}
+.option-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1.5px solid #e8e8e4;border-radius:8px;cursor:pointer;transition:border-color .15s,background .15s;}
+.option-item:hover{border-color:#f8c4c4;background:#fff8f8;}
+.option-item.selected{border-color:#f86e6e;background:#fff5f5;}
+.option-radio{width:16px;height:16px;border-radius:50%;border:2px solid #ddd;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;}
+.option-item.selected .option-radio{border-color:#f86e6e;background:#f86e6e;}
+.option-content{flex:1;}
+.option-label{font-size:13px;font-weight:500;color:#40444d;margin-bottom:2px;}
+.option-desc{font-size:11px;color:#848b96;line-height:1.5;}
+.option-range{font-size:11px;color:#f86e6e;font-weight:500;margin-top:3px;}
 .tip{font-size:12px;color:#848b96;background:#f7f8f5;border-radius:8px;padding:9px 12px;margin-top:10px;border-left:3px solid #f86e6e;line-height:1.6;}
-
-/* Divider */
 .divider{height:0.5px;background:#e4e4e0;margin:1.25rem 0;}
-
-/* Results */
-.results{border-radius:14px;overflow:hidden;margin-bottom:1rem;}
-.results-header{background:#40444d;padding:1.25rem 1.5rem;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:8px;}
-.total-label{font-size:11px;color:#848b96;margin-bottom:3px;text-transform:uppercase;letter-spacing:.05em;}
+.household-card{background:#fff;border:0.5px solid #ddddd8;border-radius:14px;margin-bottom:16px;overflow:hidden;}
+.household-top{background:#40444d;padding:16px;}
+.cat-count-row{display:flex;align-items:center;gap:12px;margin-top:6px;}
+.cat-count-row label{font-size:13px;color:rgba(255,255,255,0.8);}
+.cat-count-input{width:64px;background:rgba(255,255,255,0.1);border:2px solid rgba(255,255,255,0.2);border-radius:8px;padding:7px 10px;font-size:15px;font-weight:600;color:#fff;outline:none;text-align:center;}
+.cat-count-input:focus{border-color:#f86e6e;}
+.results-wrap{margin-bottom:1rem;}
+.results-header{background:#40444d;border-radius:14px 14px 0 0;padding:1.25rem 1.5rem;}
+.total-label{font-size:10px;color:#848b96;margin-bottom:3px;text-transform:uppercase;letter-spacing:.05em;}
 .total-val{font-size:36px;font-weight:600;color:#fff;line-height:1;}
-.year-pill{background:rgba(248,110,110,0.22);border-radius:99px;padding:6px 14px;font-size:13px;color:#f86e6e;font-weight:500;white-space:nowrap;}
-.results-body{background:#fff;border:0.5px solid #ddddd8;border-top:none;border-radius:0 0 14px 14px;padding:14px 16px;}
-.breakdown-row{display:flex;justify-content:space-between;font-size:13px;color:#848b96;padding:5px 0;border-bottom:0.5px solid #f0f0ec;}
-.breakdown-row.total-row{border-bottom:none;color:#40444d;font-weight:600;font-size:14px;padding-top:8px;}
-.cat-bar-label{display:flex;justify-content:space-between;font-size:11px;color:#a0a5ad;margin-bottom:3px;}
-.bar-track{height:5px;background:#f0f0ec;border-radius:99px;overflow:hidden;margin-bottom:7px;}
-.bar-fill{height:100%;border-radius:99px;}
-
-/* Empty state */
+.total-sub{font-size:12px;color:#c8cdd5;margin-top:4px;}
+.results-body{background:#fff;border:0.5px solid #ddddd8;border-top:none;border-radius:0 0 14px 14px;padding:16px;}
+.breakdown-label{font-size:10px;color:#a0a5ad;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;}
+.breakdown-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:6px 0;border-bottom:0.5px solid #f0f0ec;}
+.breakdown-row:last-child{border-bottom:none;}
+.breakdown-cat{color:#40444d;}
+.breakdown-amt{color:#f86e6e;font-weight:500;}
+.breakdown-row.skipped .breakdown-cat,.breakdown-row.skipped .breakdown-amt{color:#c8cdd5;}
+.cat-breakdown{margin-bottom:14px;padding-bottom:14px;border-bottom:0.5px solid #f0f0ec;}
+.cat-breakdown:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.cat-breakdown-name{font-size:13px;font-weight:600;color:#40444d;margin-bottom:8px;}
+.results-footer-note{font-size:12px;color:#848b96;text-align:center;padding:12px 0 4px;font-style:italic;line-height:1.6;}
 .empty-state{text-align:center;padding:2.5rem 1rem;color:#a0a5ad;font-size:14px;background:#fff;border-radius:14px;border:0.5px dashed #d8d8d4;margin-bottom:1.25rem;}
-
-/* Admin */
 .admin-toggle{font-size:11px;color:#d0d3d8;cursor:pointer;text-align:right;margin-top:1.5rem;user-select:none;}
 .admin-toggle:hover{color:#848b96;}
 .admin-panel{background:#40444d;border-radius:14px;padding:1.25rem 1.5rem;margin-top:10px;}
@@ -112,11 +102,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .admin-list{display:flex;flex-wrap:wrap;gap:6px;}
 .admin-tag{background:rgba(248,110,110,0.2);border-radius:99px;padding:3px 10px;font-size:11px;color:#f86e6e;}
 .admin-tag.stage-tag{background:rgba(132,139,150,0.2);color:#c8cdd5;}
-.avgs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:6px;margin-top:8px;}
-.avg-row{background:rgba(255,255,255,0.06);border-radius:8px;padding:9px 12px;}
-.avg-row-stage{font-size:10px;color:#848b96;margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
-.avg-field{font-size:10px;color:#c8cdd5;margin-right:8px;line-height:1.8;}
-.avg-field span{color:#f8a46e;}
 .admin-clear{background:none;border:0.5px solid rgba(255,255,255,0.15);border-radius:6px;padding:5px 12px;font-size:11px;color:#848b96;cursor:pointer;margin-top:14px;}
 .admin-clear:hover{border-color:#f86e6e;color:#f86e6e;}
 .pw-wrap{background:#40444d;border-radius:14px;padding:1.25rem 1.5rem;margin-top:10px;}
@@ -126,11 +111,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .pw-row input:focus{border-color:#f86e6e;}
 .pw-btn{background:#f86e6e;border:none;border-radius:8px;padding:8px 18px;font-size:13px;color:#fff;cursor:pointer;font-weight:500;}
 .pw-err{font-size:11px;color:#f86e6e;margin-top:6px;}
-
-/* Footer */
 .footer{text-align:center;margin-top:2rem;font-size:11px;color:#b8bcc4;line-height:1.8;}
 .footer a{color:#f86e6e;text-decoration:none;}
-.footer a:hover{text-decoration:underline;}
 </style>
 </head>
 <body>
@@ -141,13 +123,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <span>by</span>
       <a href="https://www.tiktok.com/@jijichidiandhunter" target="_blank" onclick="trackTikTokClick('hero')">@jijichidiandhunter</a>
     </div>
+    <div class="mode-tabs">
+      <button class="mode-tab active" id="tab-cat" onclick="switchMode('cat')">By cat</button>
+      <button class="mode-tab" id="tab-household" onclick="switchMode('household')">Whole household</button>
+    </div>
   </div>
   <div class="privacy-note">
     <span style="font-size:13px;flex-shrink:0;">🔒</span>
-    <span>Your cat's name and personal details are never collected. The cost amounts you enter are saved anonymously to improve placeholder averages over time — no identifying information is stored or shared.</span>
+    <span>Your cat's name and personal details are never collected. Selections are saved anonymously to improve estimates over time — no identifying information is stored or shared.</span>
   </div>
-  <div id="cat-list"></div>
-  <button class="add-btn" onclick="addCat()">+ Add another cat</button>
+  <div id="cat-section">
+    <div id="cat-list"></div>
+    <button class="add-btn" onclick="addCat()">+ Add another cat</button>
+  </div>
+  <div id="household-section" style="display:none;"></div>
   <div class="divider"></div>
   <div id="results-section"></div>
   <div class="admin-toggle" onclick="toggleAdmin()">⚙ owner</div>
@@ -162,83 +151,227 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     </div>
   </div>
   <div id="admin-panel" style="display:none;"></div>
-  <div class="footer">
-    Made with 🐱 for Filipino cat owners<br>
-    <a href="https://www.tiktok.com/@jijichidiandhunter" target="_blank" onclick="trackTikTokClick('footer')">@jijichidiandhunter</a>
-  </div>
+  <div class="footer">Made with 🐱 for Filipino cat owners<br><a href="https://www.tiktok.com/@jijichidiandhunter" target="_blank" onclick="trackTikTokClick('footer')">@jijichidiandhunter</a></div>
 </div>
-
 <script>
 const PW=atob("YmFpbGV5Ym95");
 const BREEDS={"Shorthaired":["Domestic Shorthair (Puspin)","Abyssinian","American Shorthair","Bengal","British Shorthair","Burmese","Devon Rex","Egyptian Mau","Manx","Ocicat","Russian Blue","Scottish Fold","Siamese","Singapura","Sphynx","Tonkinese"],"Longhaired":["Domestic Longhair","Balinese","Birman","Himalayan","Maine Coon","Norwegian Forest Cat","Persian","Ragdoll","Siberian","Somali","Turkish Angora","Turkish Van"],"Mixed / Other":["Mixed breed","Unknown"]};
 const STAGES={kitten:{label:"Kitten",range:"0–1 yr",desc:"Vaccination series, spay/neuter, high-protein growth diet",dot:"#f86e6e"},junior:{label:"Junior",range:"1–2 yrs",desc:"Active & exploratory — enrichment matters most",dot:"#f8a46e"},adult:{label:"Adult",range:"3–6 yrs",desc:"Stable maintenance phase, annual vet visits",dot:"#848b96"},mature:{label:"Mature",range:"7–10 yrs",desc:"Early health monitoring, dietary adjustments",dot:"#6e8ef8"},senior:{label:"Senior",range:"11–14 yrs",desc:"More frequent vet visits, senior diet, joint support",dot:"#b06ef8"},geriatric:{label:"Geriatric",range:"15+ yrs",desc:"Intensive care, specialized diet, chronic condition management",dot:"#f86eb0"}};
-const BASE={kitten:{food:1400,vet:3500,grooming:200,toys:600,litter:600,meds:800},junior:{food:1100,vet:900,grooming:200,toys:500,litter:550,meds:200},adult:{food:1000,vet:600,grooming:200,toys:250,litter:500,meds:150},mature:{food:1050,vet:900,grooming:250,toys:200,litter:500,meds:400},senior:{food:1100,vet:1400,grooming:300,toys:150,litter:500,meds:700},geriatric:{food:1200,vet:2500,grooming:300,toys:100,litter:500,meds:1200}};
-const HINTS={food:{kitten:"High-protein kitten formula",junior:"Premium wet+dry mix",adult:"Avg PH dry/wet combo",mature:"Digestive support blend",senior:"Senior formula",geriatric:"Prescription/renal diet"},vet:{kitten:"Vaccines + spay/neuter amortized",junior:"Annual check + boosters",adult:"Annual wellness visit",mature:"Bi-annual check + bloodwork",senior:"Quarterly vet visits",geriatric:"Monthly monitoring"},grooming:{kitten:"Intro grooming",junior:"Basic grooming",adult:"Monthly bath/trim",mature:"Regular grooming",senior:"Gentle grooming",geriatric:"Careful handling needed"},toys:{kitten:"Essential enrichment",junior:"Active play stage",adult:"Maintenance enrichment",mature:"Low-impact toys",senior:"Gentle play items",geriatric:"Minimal stimulation"},litter:{kitten:"Clumping, unscented",junior:"Premium clumping",adult:"Standard clumping avg",mature:"Low-dust preferred",senior:"Low-entry box + litter",geriatric:"Accessibility-friendly"},meds:{kitten:"Deworm + flea prevention",junior:"Preventive meds",adult:"Flea/tick prevention",mature:"Joint + preventive",senior:"Chronic meds + supplements",geriatric:"Multi-medication regimen"}};
-const BAR_COLORS={food:"#f86e6e",vet:"#6e8ef8",grooming:"#9b6ef8",toys:"#f8c46e",litter:"#6ef8b0",meds:"#f86eb0"};
-const FIELDS=["food","vet","grooming","toys","litter","meds"];
-const LABELS={food:"Food",vet:"Vet / health",grooming:"Grooming",toys:"Toys & accessories",litter:"Litter",meds:"Meds / supplements"};
-const MIN=5;
+const CATEGORIES=[
+  {id:"food",icon:"🍽",label:"Food",options:[
+    {id:"dry_affordable",label:"Dry food — affordable",desc:"Friskies, Cat Chow, Pedigree",range:[400,700]},
+    {id:"dry_premium",label:"Dry food — premium",desc:"Royal Canin, Hills, Purina Pro Plan",range:[800,1400]},
+    {id:"wet_affordable",label:"Wet food — affordable",desc:"Whiskas, Felix pouches (~PHP 25–40/pouch)",range:[600,900]},
+    {id:"wet_mid",label:"Wet food — mid",desc:"Sheba, Me-O premium (~PHP 45–70/pouch)",range:[900,1400]},
+    {id:"wet_premium",label:"Wet food — premium",desc:"Ziwi Peak, Addiction, RC wet (~PHP 100–200+/pouch)",range:[2000,4000]},
+    {id:"mix",label:"Mix of dry + wet",desc:"Dry as base, wet as topper or daily treat",range:[800,1800]},
+    {id:"raw",label:"Raw / home-cooked",desc:"DIY raw or cooked meals with supplements",range:[1500,3500]},
+  ]},
+  {id:"vet",icon:"🏥",label:"Vet / health",options:[
+    {id:"none",label:"Emergencies only",desc:"Only visit when something is clearly wrong",range:[0,500]},
+    {id:"vax",label:"Annual vaccines only",desc:"Yearly anti-rabies and core vaccines",range:[500,900]},
+    {id:"wellness",label:"Annual wellness visit",desc:"Full check-up + vaccines once a year",range:[800,1500]},
+    {id:"preventive",label:"Full preventive care",desc:"Bi-annual or quarterly visits, bloodwork, dental",range:[1500,3000]},
+  ]},
+  {id:"grooming",icon:"✂️",label:"Grooming",options:[
+    {id:"home",label:"I groom at home",desc:"Self-grooming or DIY brushing and baths",range:[0,200]},
+    {id:"occasional",label:"Occasional salon",desc:"Every 2–3 months at a grooming salon",range:[200,500]},
+    {id:"monthly",label:"Monthly professional grooming",desc:"Full groom (bath, trim, blow dry) monthly",range:[500,1200]},
+  ]},
+  {id:"litter",icon:"🪣",label:"Litter",options:[
+    {id:"clay",label:"Basic clay (bentonite)",desc:"Standard clumping bentonite litter",range:[200,400]},
+    {id:"clumping",label:"Clumping (non-bentonite)",desc:"Silica gel, paper, or wood-based clumping",range:[350,600]},
+    {id:"cassava",label:"Cassava litter",desc:"Eco-friendly, biodegradable, low dust",range:[400,700]},
+    {id:"premium",label:"Premium natural",desc:"Tofu, pine, corn — low dust, flushable options",range:[500,900]},
+  ]},
+  {id:"meds",icon:"💊",label:"Meds / supplements",condition:true,options:[
+    {id:"none",label:"None",desc:"No regular medications or supplements",range:[0,0]},
+    {id:"prevention",label:"Flea & deworming only",desc:"Monthly flea treatment + quarterly deworming",range:[200,400]},
+    {id:"prevention_vitamins",label:"Flea, deworming + vitamins",desc:"Prevention plus daily supplements",range:[400,700]},
+    {id:"prescription",label:"Prescription / chronic meds",desc:"Ongoing medication for a diagnosed condition",range:[800,2500]},
+    {id:"specialized",label:"Specialized condition management",desc:"Multiple meds, prescription diet, regular monitoring",range:[2000,5000]},
+  ]},
+  {id:"toys",icon:"🧶",label:"Toys & enrichment",options:[
+    {id:"minimal",label:"Minimal",desc:"A few basics — a ball, a stick toy",range:[50,150]},
+    {id:"basics",label:"Some basics",desc:"A couple of toys, occasional replacement",range:[150,300]},
+    {id:"regular",label:"Regular rotation",desc:"New toys monthly, cat tree or scratcher",range:[300,600]},
+    {id:"full",label:"Full enrichment setup",desc:"Puzzle feeders, tunnels, window perch, interactive toys",range:[600,1200]},
+  ]},
+];
+const CONDITIONS=[
+  {group:"General",options:["Healthy / no known conditions"]},
+  {group:"Urinary",options:["FLUTD / urinary tract issues","Kidney disease (CKD)","Bladder stones / crystals"]},
+  {group:"Digestive",options:["IBD / chronic vomiting or diarrhea","Food allergies / sensitivities","Constipation / megacolon"]},
+  {group:"Respiratory",options:["Feline asthma / bronchitis","Upper respiratory infection (URI)"]},
+  {group:"Skin & coat",options:["Skin allergies / dermatitis","Ringworm / fungal infection","Mange / mites"]},
+  {group:"Heart",options:["Hypertrophic cardiomyopathy (HCM)","Hypertension"]},
+  {group:"Endocrine",options:["Diabetes mellitus","Hyperthyroidism"]},
+  {group:"Immune & infectious",options:["FIV","FeLV (Feline Leukemia Virus)","FIP (Feline Infectious Peritonitis)"]},
+  {group:"Eyes",options:["Conjunctivitis / eye discharge","Corneal ulcer"]},
+  {group:"Dental",options:["Periodontal disease / dental issues"]},
+  {group:"Other",options:["Post-surgery / recovery","Cancer / tumor","Neurological condition","Senior / multiple chronic conditions"]},
+];
+const CONDITION_MED_HINT={"FLUTD / urinary tract issues":"Prescription urinary diet + urinary supplements recommended.","Kidney disease (CKD)":"Renal prescription diet + phosphorus binders. Costs can be significant.","Bladder stones / crystals":"Dissolution diet + regular urinalysis. May require surgery.","IBD / chronic vomiting or diarrhea":"Hydrolyzed protein diet + probiotics + possible steroids.","Food allergies / sensitivities":"Novel protein or hydrolyzed diet. Trial-and-error phase can be costly.","Diabetes mellitus":"Insulin injections + glucose monitoring. Daily ongoing cost.","Hyperthyroidism":"Daily medication (methimazole) or radioactive iodine treatment.","Hypertrophic cardiomyopathy (HCM)":"Cardiac meds (atenolol, clopidogrel). Regular echocardiograms.","FIV":"No cure — supportive care, immune boosters, vet monitoring.","FeLV (Feline Leukemia Virus)":"Supportive care + regular bloodwork.","FIP (Feline Infectious Peritonitis)":"GS-441524 antiviral treatment — expensive but effective.","Feline asthma / bronchitis":"Inhalers (fluticasone) + bronchodilators.","Periodontal disease / dental issues":"Annual dental cleaning under anesthesia — budget PHP 2,000–5,000/year."};
+const FUN_NOTES={
+  low:[
+    "Smart spending, big love. Your cat doesn't know the difference between budget kibble and premium pate. They just know you showed up. 🐾",
+    "Frugal cat parent? More like resourceful. You're making it work and your cat is living their best life.",
+    "Not all cat parents have deep pockets. All good ones have deep love. You qualify. 😸",
+  ],
+  mid:[
+    "Balanced budget, happy cat. You've found the sweet spot between spoiling and sensible. Respect.",
+    "Mid-range spending, full-range love. Your cat is well fed, well cared for, and probably still knocking things off tables anyway.",
+    "This is the way. Consistent, thoughtful, and sustainable. Your cat approves (even if they won't show it). 🐱",
+  ],
+  high:[
+    "Premium cat parent detected. Your cat eats better than most people. No judgment, only respect. 👑",
+    "You said your cat deserves the best and then you meant it. That's not extra, that's love with a budget to match.",
+    "Royal Canin, monthly grooming, full preventive care. Your cat is thriving and they know it. Probably. 😸",
+  ]
+};
 
-let cats=[],costs={},cid=0,adminUnlocked=false,adminVisible=false,liveAverages={};
+const BREEDS_OBJ=BREEDS;
+let cats=[],cid=0,adminUnlocked=false,adminVisible=false,currentMode='cat';
+let household={catCount:1,condition:"Healthy / no known conditions",selections:{},includes:{}};
+CATEGORIES.forEach(c=>{household.includes[c.id]=true;});
 
 function lsGet(k){try{const v=localStorage.getItem(k);return v?JSON.parse(v):null;}catch{return null;}}
 function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch{}}
-function loadStats(){return lsGet("catcalc_stats")||{visits:0,sessions:[],breeds:[],stages:[],budgets:[],fieldData:{},tiktokClicks:[]};}
-function saveStats(s){lsSet("catcalc_stats",s);}
-
+function loadStats(){return lsGet("catcalc2_stats")||{visits:0,sessions:[],breeds:[],stages:[],conditions:[],tiktokClicks:[]};}
+function saveStats(s){lsSet("catcalc2_stats",s);}
 function trackVisit(){const s=loadStats();s.visits=(s.visits||0)+1;saveStats(s);}
-function trackTikTokClick(source){const s=loadStats();s.tiktokClicks=s.tiktokClicks||[];s.tiktokClicks.push({ts:Date.now(),source});if(s.tiktokClicks.length>500)s.tiktokClicks=s.tiktokClicks.slice(-500);saveStats(s);if(adminUnlocked)renderAdmin();}
-
-function computeAverages(fd){
-  const avgs={};
-  for(const stage of Object.keys(STAGES)){avgs[stage]={};for(const f of FIELDS){const arr=(fd[stage]&&fd[stage][f])||[];if(arr.length>=MIN)avgs[stage][f]=Math.round(arr.reduce((a,b)=>a+b,0)/arr.length);}}
-  return avgs;
-}
+function trackTikTokClick(src){const s=loadStats();s.tiktokClicks=s.tiktokClicks||[];s.tiktokClicks.push({ts:Date.now(),source:src});saveStats(s);if(adminUnlocked)renderAdmin();}
 
 let sessionTimer=null;
 function recordSession(){
   clearTimeout(sessionTimer);
   sessionTimer=setTimeout(()=>{
-    if(!cats.length)return;
     const s=loadStats();
-    s.sessions=s.sessions||[];s.breeds=s.breeds||[];s.stages=s.stages||[];s.budgets=s.budgets||[];
-    if(!s.fieldData)s.fieldData={};
-    cats.forEach(c=>{
-      if(!s.breeds.includes(c.breed))s.breeds.push(c.breed);
-      if(!s.stages.includes(c.stage))s.stages.push(c.stage);
-      if(!s.fieldData[c.stage])s.fieldData[c.stage]={};
-      FIELDS.forEach(f=>{const v=costs[c.id][f]||0;if(v>0){if(!s.fieldData[c.stage][f])s.fieldData[c.stage][f]=[];s.fieldData[c.stage][f].push(v);if(s.fieldData[c.stage][f].length>500)s.fieldData[c.stage][f]=s.fieldData[c.stage][f].slice(-500);}});
-    });
-    const grand=cats.reduce((t,c)=>t+FIELDS.reduce((s,f)=>s+(costs[c.id][f]||0),0),0);
-    s.sessions.push({ts:Date.now(),catCount:cats.length,budget:grand});s.budgets.push(grand);
-    if(s.sessions.length>200)s.sessions=s.sessions.slice(-200);if(s.budgets.length>200)s.budgets=s.budgets.slice(-200);
-    saveStats(s);liveAverages=computeAverages(s.fieldData||{});
-    renderResults();
-    if(adminUnlocked)renderAdmin();
+    s.sessions=s.sessions||[];s.breeds=s.breeds||[];s.stages=s.stages||[];s.conditions=s.conditions||[];
+    if(currentMode==='cat'){
+      cats.forEach(c=>{
+        if(!s.breeds.includes(c.breed))s.breeds.push(c.breed);
+        if(!s.stages.includes(c.stage))s.stages.push(c.stage);
+        if(c.condition&&!s.conditions.includes(c.condition))s.conditions.push(c.condition);
+      });
+      const mid=cats.reduce((t,c)=>t+computeCatRange(c).mid,0);
+      if(mid>0)s.sessions.push({ts:Date.now(),catCount:cats.length,budget:mid,mode:'cat'});
+    } else {
+      const r=computeHouseholdRange();
+      if(r.mid>0)s.sessions.push({ts:Date.now(),catCount:household.catCount,budget:r.mid,mode:'household'});
+    }
+    if(s.sessions.length>200)s.sessions=s.sessions.slice(-200);
+    saveStats(s);if(adminUnlocked)renderAdmin();
   },1500);
 }
 
-function getGroup(b){for(const[g,l]of Object.entries(BREEDS))if(l.includes(b))return g;return"Mixed / Other";}
-function getDefaults(breed,stage){
-  const b={...BASE[stage]};
-  if(getGroup(breed)==="Longhaired")b.grooming+=300;
-  if(["Persian","Himalayan"].includes(breed)){b.grooming+=400;b.meds+=100;}
-  if(["Maine Coon","Norwegian Forest Cat","Siberian","Ragdoll"].includes(breed))b.grooming+=200;
-  if(breed==="Sphynx"){b.grooming=700;b.meds+=200;}
-  if(breed==="Bengal"){b.toys+=250;b.food+=100;}
-  if(breed==="Scottish Fold")b.meds+=200;
-  return b;
+function getGroup(b){for(const[g,l]of Object.entries(BREEDS_OBJ))if(l.includes(b))return g;return"Mixed / Other";}
+function addCat(){
+  const id=cid++;
+  const cat={id,name:"",breed:"Domestic Shorthair (Puspin)",stage:"adult",condition:"Healthy / no known conditions",selections:{},includes:{}};
+  CATEGORIES.forEach(c=>{cat.includes[c.id]=true;});
+  cats.push(cat);
+  renderCatList();renderResults();recordSession();
 }
-
-function addCat(){const id=cid++;cats.push({id,name:"",breed:"Domestic Shorthair (Puspin)",stage:"adult"});costs[id]=getDefaults("Domestic Shorthair (Puspin)","adult");renderCatList();renderResults();recordSession();}
-function removeCat(id){cats=cats.filter(c=>c.id!==id);delete costs[id];renderCatList();renderResults();recordSession();}
-function updateCat(id,field,val){
+function removeCat(id){cats=cats.filter(c=>c.id!==id);renderCatList();renderResults();recordSession();}
+function updateBreedStage(id,field,val){const c=cats.find(c=>c.id===id);if(!c)return;c[field]=val;renderCatList();renderResults();recordSession();}
+function updateCatCondition(id,val){const c=cats.find(c=>c.id===id);if(!c)return;c.condition=val;renderCatList();renderResults();recordSession();}
+function toggleInclude(id,catId){const c=cats.find(c=>c.id===id);if(!c)return;c.includes[catId]=!c.includes[catId];renderCatList();renderResults();recordSession();}
+function selectOption(id,catId,optId){
   const c=cats.find(c=>c.id===id);if(!c)return;
-  c[field]=val;
-  if(field==="breed"||field==="stage"){costs[id]=getDefaults(c.breed,c.stage);renderCatList();}
+  c.selections[catId]=optId;
+  const body=document.getElementById(`sec-body-${id}-${catId}`);
+  if(body)body.querySelectorAll('.option-item').forEach(el=>{
+    const sel=el.dataset.opt===optId;
+    el.classList.toggle('selected',sel);
+    const r=el.querySelector('.option-radio');
+    if(r)r.innerHTML=sel?'<span style="width:5px;height:5px;border-radius:50%;background:#fff;display:block;"></span>':'';
+  });
+  updateSectionSubtitle(id,catId,optId);
   renderResults();recordSession();
 }
-function updateCost(id,f,val){costs[id][f]=parseInt(val)||0;renderResults();recordSession();}
+function updateSectionSubtitle(catId,sectionId,optId){
+  const opt=CATEGORIES.find(c=>c.id===sectionId)?.options.find(o=>o.id===optId);
+  const el=document.getElementById(`sub-${catId}-${sectionId}`);
+  if(el&&opt)el.textContent=`PHP ${opt.range[0].toLocaleString()}–${opt.range[1].toLocaleString()}/mo`;
+}
+function toggleSection(id,catId){
+  const body=document.getElementById(`sec-body-${id}-${catId}`);
+  const arrow=document.getElementById(`sec-arrow-${id}-${catId}`);
+  if(!body)return;const open=body.style.display!=='none';
+  body.style.display=open?'none':'block';
+  if(arrow)arrow.textContent=open?'›':'‹';
+}
+
+function switchMode(m){
+  currentMode=m;
+  document.getElementById('tab-cat').classList.toggle('active',m==='cat');
+  document.getElementById('tab-household').classList.toggle('active',m==='household');
+  document.getElementById('cat-section').style.display=m==='cat'?'block':'none';
+  document.getElementById('household-section').style.display=m==='household'?'block':'none';
+  if(m==='household')renderHousehold();
+  renderResults();
+}
+
+function toggleHouseholdInclude(catId){household.includes[catId]=!household.includes[catId];renderHousehold();renderResults();recordSession();}
+function selectHouseholdOption(catId,optId){
+  household.selections[catId]=optId;
+  const body=document.getElementById(`hh-body-${catId}`);
+  if(body)body.querySelectorAll('.option-item').forEach(el=>{
+    const sel=el.dataset.opt===optId;
+    el.classList.toggle('selected',sel);
+    const r=el.querySelector('.option-radio');
+    if(r)r.innerHTML=sel?'<span style="width:5px;height:5px;border-radius:50%;background:#fff;display:block;"></span>':'';
+  });
+  const sub=document.getElementById(`hh-sub-${catId}`);
+  const opt=CATEGORIES.find(c=>c.id===catId)?.options.find(o=>o.id===optId);
+  if(sub&&opt)sub.textContent=`PHP ${opt.range[0].toLocaleString()}–${opt.range[1].toLocaleString()}/mo`;
+  renderResults();recordSession();
+}
+function toggleHouseholdSection(catId){
+  const body=document.getElementById(`hh-body-${catId}`);
+  const arrow=document.getElementById(`hh-arrow-${catId}`);
+  if(!body)return;const open=body.style.display!=='none';
+  body.style.display=open?'none':'block';
+  if(arrow)arrow.textContent=open?'›':'‹';
+}
+function updateHouseholdCondition(val){household.condition=val;renderHousehold();renderResults();}
+function updateHouseholdCount(val){household.catCount=Math.max(1,parseInt(val)||1);renderResults();recordSession();}
+
+function computeCatRange(cat){
+  let low=0,mid=0,high=0;
+  CATEGORIES.forEach(cd=>{
+    if(!cat.includes[cd.id])return;
+    const opt=cd.options.find(o=>o.id===cat.selections[cd.id]);
+    if(!opt)return;
+    low+=opt.range[0];high+=opt.range[1];mid+=Math.round((opt.range[0]+opt.range[1])/2);
+  });
+  return{low,mid,high};
+}
+function computeHouseholdRange(){
+  let low=0,mid=0,high=0;const n=household.catCount||1;
+  CATEGORIES.forEach(cd=>{
+    if(!household.includes[cd.id])return;
+    const opt=cd.options.find(o=>o.id===household.selections[cd.id]);
+    if(!opt)return;
+    const mult=cd.id==='litter'?Math.ceil(n/2):n;
+    low+=opt.range[0]*mult;high+=opt.range[1]*mult;mid+=Math.round((opt.range[0]+opt.range[1])/2)*mult;
+  });
+  return{low,mid,high};
+}
+
+function buildSections(selections,includes,condition,idPrefix,toggleFn,selectFn,includeFn,condFn,condOpts){
+  return CATEGORIES.map(cd=>{
+    const included=includes[cd.id];
+    const sel=selections[cd.id];
+    const selOpt=cd.options.find(o=>o.id===sel);
+    const subtitle=selOpt?`PHP ${selOpt.range[0].toLocaleString()}–${selOpt.range[1].toLocaleString()}/mo`:(included?"Pick an option":"Skipped");
+    const condHint=cd.condition&&condition&&CONDITION_MED_HINT[condition]?`<div class="tip">${CONDITION_MED_HINT[condition]}</div>`:"";
+    const condSelector=cd.condition?`<div style="margin-bottom:10px;"><div style="font-size:11px;color:#848b96;margin-bottom:5px;font-weight:500;">Cat's condition</div><select class="condition-select" onchange="${condFn}(this.value)">${condOpts.replace(`value="${condition}"`,`value="${condition}" selected`)}</select>${condHint}</div>`:"";
+    const optHtml=cd.options.map(o=>`<div class="option-item${sel===o.id?" selected":""}" data-opt="${o.id}" onclick="${selectFn}('${cd.id}','${o.id}')"><div class="option-radio">${sel===o.id?'<span style="width:5px;height:5px;border-radius:50%;background:#fff;display:block;"></span>':''}</div><div class="option-content"><div class="option-label">${o.label}</div><div class="option-desc">${o.desc}</div><div class="option-range">PHP ${o.range[0].toLocaleString()} – ${o.range[1].toLocaleString()} / mo</div></div></div>`).join("");
+    return`<div class="cat-section"><div class="cat-section-header"><div class="section-title-row"><span style="font-size:15px;">${cd.icon}</span><span class="section-title">${cd.label}</span></div><div style="display:flex;align-items:center;gap:8px;"><span id="${idPrefix}-sub-${cd.id}" class="section-subtitle" style="color:${included?(sel?"#f86e6e":"#a0a5ad"):"#c8cdd5"};">${subtitle}</span><label class="toggle-switch" onclick="event.stopPropagation();"><input type="checkbox" ${included?"checked":""} onchange="${includeFn}('${cd.id}')"/><span class="toggle-slider"></span></label><span id="${idPrefix}-arrow-${cd.id}" style="font-size:18px;color:#c0c5cc;cursor:pointer;" onclick="${toggleFn}('${cd.id}')">›</span></div></div><div id="${idPrefix}-body-${cd.id}" class="cat-section-body" style="display:none;">${condSelector}<div class="option-list">${optHtml}</div></div></div>`;
+  }).join("");
+}
 
 function getTip(b){
   if(["Persian","Himalayan"].includes(b))return"Persians need daily brushing and are prone to eye discharge and respiratory issues.";
@@ -250,64 +383,75 @@ function getTip(b){
   return"";
 }
 
-function getPlaceholder(stage,f,fallback){const avg=liveAverages[stage]&&liveAverages[stage][f];return avg?avg.toLocaleString():fallback.toLocaleString();}
-function isLive(stage,f){return!!(liveAverages[stage]&&liveAverages[stage][f]);}
+function condOptsHtml(selected){
+  return CONDITIONS.map(g=>`<optgroup label="${g.group}">${g.options.map(o=>`<option value="${o}"${o===selected?" selected":""}>${o}</option>`).join("")}</optgroup>`).join("");
+}
 
 function renderCatList(){
   const el=document.getElementById("cat-list");
   if(!cats.length){el.innerHTML=`<div class="empty-state">No cats yet — hit the button below to get started.</div>`;return;}
-  const breedBase=Object.entries(BREEDS).map(([g,l])=>`<optgroup label="${g}">${l.map(b=>`<option value="${b}">${b}</option>`).join("")}</optgroup>`).join("");
+  const breedBase=Object.entries(BREEDS_OBJ).map(([g,l])=>`<optgroup label="${g}">${l.map(b=>`<option value="${b}">${b}</option>`).join("")}</optgroup>`).join("");
   el.innerHTML=cats.map(c=>{
     const st=STAGES[c.stage];
-    const def=getDefaults(c.breed,c.stage);
     const breedOpts=breedBase.replace(`value="${c.breed}"`,`value="${c.breed}" selected`);
     const tip=getTip(c.breed);
-    return`<div class="cat-card">
-      <div class="cat-card-top">
-        <div class="field-label">Cat's name</div>
-        <div class="name-row">
-          <input class="name-input" type="text" placeholder="e.g. Luna, Mochi, Ginger..." value="${c.name}" oninput="cats.find(x=>x.id===${c.id}).name=this.value;renderResults();recordSession();" autocomplete="off"/>
-          <button class="remove-btn" onclick="removeCat(${c.id})">×</button>
-        </div>
-        <div class="field-label">Breed</div>
-        <select class="breed-select" onchange="updateCat(${c.id},'breed',this.value)">${breedOpts}</select>
-      </div>
-      <div class="cat-card-body">
-        <div class="stage-section-label">Life stage</div>
-        <div class="stage-row">${Object.entries(STAGES).map(([v,s])=>`<button class="stage-btn${c.stage===v?" active":""}" onclick="updateCat(${c.id},'stage','${v}')"><span class="sb-label">${s.label}</span><span class="sb-range">${s.range}</span></button>`).join("")}</div>
-        <div class="stage-meta"><span style="display:flex;align-items:center;"><span class="stage-dot" style="background:${st.dot}"></span><strong style="color:#40444d;">${st.range}</strong></span><span>${st.desc}</span></div>
-        <p class="cost-grid-instruction">Enter your actual monthly spend per category:</p>
-        <div class="cost-grid">${FIELDS.map(f=>`
-          <div class="cost-item ${f}">
-            <label>${LABELS[f]}</label>
-            <div class="php-input-wrap">
-              <span class="php-prefix">PHP</span>
-              <input class="cost-input" type="number" min="0" step="50" value="${costs[c.id][f]||""}" placeholder="${getPlaceholder(c.stage,f,def[f])}" oninput="updateCost(${c.id},'${f}',this.value)"/>
-            </div>
-            <div class="cost-hint"><span>${HINTS[f][c.stage]}</span><span class="avg-badge${isLive(c.stage,f)?" live":""}">${isLive(c.stage,f)?"community avg":"suggested"}</span></div>
-          </div>`).join("")}
-        </div>
-        ${tip?`<div class="tip">${tip}</div>`:""}
-      </div>
-    </div>`;
+    const sections=buildSections(c.selections,c.includes,c.condition,`sec-${c.id}`,`(catId)=>{const b=document.getElementById('sec-${c.id}-body-'+catId);const a=document.getElementById('sec-${c.id}-arrow-'+catId);if(b){const o=b.style.display!=='none';b.style.display=o?'none':'block';if(a)a.textContent=o?'›':'‹';}}`,`(catId,optId)=>selectOption(${c.id},catId,optId)`,`(catId)=>toggleInclude(${c.id},catId)`,`(v)=>updateCatCondition(${c.id},v)`,condOptsHtml(c.condition));
+    return`<div class="cat-card"><div class="cat-card-top"><div class="field-label">Cat's name</div><div class="name-row"><input class="name-input" type="text" placeholder="e.g. Luna, Mochi, Ginger..." value="${c.name}" autocomplete="off" oninput="cats.find(x=>x.id===${c.id}).name=this.value;renderResults();recordSession();"/><button class="remove-btn" onclick="removeCat(${c.id})">×</button></div><div class="field-label" style="margin-top:10px;">Breed</div><select class="breed-select" onchange="updateBreedStage(${c.id},'breed',this.value)">${breedOpts}</select></div><div class="cat-card-body"><div class="stage-section-label">Life stage</div><div class="stage-row">${Object.entries(STAGES).map(([v,s])=>`<button class="stage-btn${c.stage===v?" active":""}" onclick="updateBreedStage(${c.id},'stage','${v}')"><span class="sb-label">${s.label}</span><span class="sb-range">${s.range}</span></button>`).join("")}</div><div class="stage-meta"><span style="display:flex;align-items:center;"><span class="stage-dot" style="background:${st.dot}"></span><strong style="color:#40444d;">${st.range}</strong></span><span>${st.desc}</span></div><div style="font-size:11px;color:#848b96;font-style:italic;margin-bottom:10px;">Toggle categories on/off, then pick the option that matches your lifestyle.</div>${sections}${tip?`<div class="tip" style="margin-top:10px;">${tip}</div>`:""}</div></div>`;
   }).join("");
+}
+
+function renderHousehold(){
+  const el=document.getElementById('household-section');
+  const sections=buildSections(household.selections,household.includes,household.condition,"hh","toggleHouseholdSection","selectHouseholdOption","toggleHouseholdInclude","updateHouseholdCondition",condOptsHtml(household.condition));
+  el.innerHTML=`<div class="household-card"><div class="household-top"><div class="field-label" style="color:rgba(255,255,255,0.55);">Household</div><div class="cat-count-row"><label>How many cats?</label><input class="cat-count-input" type="number" min="1" max="20" value="${household.catCount}" oninput="updateHouseholdCount(this.value)"/></div></div><div class="cat-card-body"><div style="font-size:11px;color:#848b96;font-style:italic;margin-bottom:10px;">Pick the options that best describe your household's typical spending.</div>${sections}</div></div>`;
+}
+
+function getTier(low,mid,high){
+  const spread=high-low;
+  if(spread===0)return'mid';
+  const pos=(mid-low)/spread;
+  if(pos<0.35)return'low';
+  if(pos>0.65)return'high';
+  return'mid';
+}
+function getTierLabel(tier){return tier==='low'?'Budget-friendly':tier==='high'?'Premium':'Balanced';}
+function getTierColor(tier){return tier==='low'?'#3a5fc8':tier==='high'?'#b03030':'#c04040';}
+function getFunNote(low,mid,high){
+  const tier=getTier(low,mid,high);
+  const pool=FUN_NOTES[tier];
+  return{note:pool[Math.floor(Math.random()*pool.length)],tier};
 }
 
 function renderResults(){
   const el=document.getElementById("results-section");
+  if(currentMode==='household'){
+    const r=computeHouseholdRange();
+    if(!r.mid){el.innerHTML="";return;}
+    const n=household.catCount;
+    const breakdown=CATEGORIES.map(cd=>{
+      const included=household.includes[cd.id];
+      const opt=cd.options.find(o=>o.id===household.selections[cd.id]);
+      const mult=cd.id==='litter'?Math.ceil(n/2):n;
+      const mid=opt?Math.round((opt.range[0]+opt.range[1])/2)*mult:0;
+      return`<div class="breakdown-row${!included||!opt?" skipped":""}"><span class="breakdown-cat">${cd.label}${n>1&&opt?cd.id==='litter'?` ×${Math.ceil(n/2)}`:" ×"+n:""}</span><span class="breakdown-amt">${!included?"—":opt?`PHP ${mid.toLocaleString()}`:"—"}</span></div>`;
+    }).join("");
+    const {note,tier}=getFunNote(r.low,r.mid,r.high);
+    const tierLabel=getTierLabel(tier);const tierColor=getTierColor(tier);
+    el.innerHTML=`<div class="results-wrap"><div class="results-header"><p class="total-label">Household monthly estimate (${n} cat${n>1?'s':''})</p><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;"><p class="total-val">PHP ${r.mid.toLocaleString()}</p><span style="background:rgba(255,255,255,0.12);border-radius:99px;padding:4px 12px;font-size:12px;color:#fff;font-weight:500;">${tierLabel}</span></div><p class="total-sub">Low PHP ${r.low.toLocaleString()} · High PHP ${r.high.toLocaleString()}</p></div><div class="results-body"><div class="breakdown-label">Breakdown</div>${breakdown}<p class="results-footer-note">${note}</p></div></div>`;
+    return;
+  }
   if(!cats.length){el.innerHTML="";return;}
-  const catTotals=cats.map(c=>({name:c.name||(c.breed.split(" ")[0]+" "+(c.id+1)),total:FIELDS.reduce((s,f)=>s+(costs[c.id][f]||0),0)}));
-  const grand=catTotals.reduce((s,c)=>s+c.total,0);
-  const catSum=FIELDS.reduce((acc,f)=>{acc[f]=cats.reduce((s,c)=>s+(costs[c.id][f]||0),0);return acc;},{});
-  const bars=FIELDS.map(f=>{const pct=grand>0?Math.round(catSum[f]/grand*100):0;return`<div><div class="cat-bar-label"><span>${LABELS[f]}</span><span>PHP ${catSum[f].toLocaleString()} (${pct}%)</span></div><div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${BAR_COLORS[f]}"></div></div></div>`;}).join("");
-  const rows=cats.length>1?catTotals.map(c=>`<div class="breakdown-row"><span>${c.name}</span><span>PHP ${c.total.toLocaleString()}/mo</span></div>`).join("")+`<div class="breakdown-row total-row"><span>Total</span><span>PHP ${grand.toLocaleString()}/mo</span></div>`:"";
-  el.innerHTML=`<div class="results">
-    <div class="results-header">
-      <div><p class="total-label">Monthly estimate</p><p class="total-val">PHP ${grand.toLocaleString()}</p></div>
-      <span class="year-pill">PHP ${(grand*12).toLocaleString()} / year</span>
-    </div>
-    <div class="results-body">${rows}<div style="margin-top:${cats.length>1?"14px":"0"}">${bars}</div></div>
-  </div>`;
+  const catResults=cats.map(c=>({name:c.name||(c.breed.split(" ")[0]+" "+(c.id+1)),range:computeCatRange(c),breakdown:CATEGORIES.map(cd=>{const included=c.includes[cd.id];const opt=cd.options.find(o=>o.id===c.selections[cd.id]);const mid=opt?Math.round((opt.range[0]+opt.range[1])/2):0;return{label:cd.label,included,opt,mid};})}));
+  const grandMid=catResults.reduce((s,r)=>s+r.range.mid,0);
+  const grandLow=catResults.reduce((s,r)=>s+r.range.low,0);
+  const grandHigh=catResults.reduce((s,r)=>s+r.range.high,0);
+  if(!grandMid){el.innerHTML="";return;}
+  const multiBreakdown=cats.length>1?
+    catResults.map(r=>`<div class="cat-breakdown"><div class="cat-breakdown-name">${r.name} — PHP ${r.range.mid.toLocaleString()}/mo</div>${r.breakdown.map(b=>`<div class="breakdown-row${!b.included||!b.opt?" skipped":""}"><span class="breakdown-cat">${b.label}</span><span class="breakdown-amt">${!b.included?"—":b.opt?`PHP ${b.mid.toLocaleString()}`:"—"}</span></div>`).join("")}</div>`).join(""):
+    catResults[0].breakdown.map(b=>`<div class="breakdown-row${!b.included||!b.opt?" skipped":""}"><span class="breakdown-cat">${b.label}</span><span class="breakdown-amt">${!b.included?"—":b.opt?`PHP ${b.mid.toLocaleString()}`:"—"}</span></div>`).join("");
+  const {note,tier}=getFunNote(grandLow,grandMid,grandHigh);
+  const tierLabel=getTierLabel(tier);
+  el.innerHTML=`<div class="results-wrap"><div class="results-header"><p class="total-label">Monthly estimate${cats.length>1?" · "+cats.length+" cats":""}</p><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;"><p class="total-val">PHP ${grandMid.toLocaleString()}</p><span style="background:rgba(255,255,255,0.12);border-radius:99px;padding:4px 12px;font-size:12px;color:#fff;font-weight:500;">${tierLabel}</span></div><p class="total-sub">Low PHP ${grandLow.toLocaleString()} · High PHP ${grandHigh.toLocaleString()}</p></div><div class="results-body"><div class="breakdown-label">Breakdown</div>${multiBreakdown}<p class="results-footer-note">${note}</p></div></div>`;
 }
 
 function toggleAdmin(){
@@ -319,44 +463,16 @@ function checkPw(){
   else document.getElementById("pw-err").style.display="block";
 }
 function renderAdmin(){
-  const el=document.getElementById("admin-panel");
-  const s=loadStats();
-  const sessions=s.sessions||[],budgets=s.budgets||[],clicks=s.tiktokClicks||[];
-  const avgBudget=budgets.length?Math.round(budgets.reduce((a,b)=>a+b,0)/budgets.length):0;
+  const el=document.getElementById("admin-panel");const s=loadStats();
+  const sessions=s.sessions||[],clicks=s.tiktokClicks||[];
+  const avgBudget=sessions.length?Math.round(sessions.reduce((a,b)=>a+b.budget,0)/sessions.length):0;
   const avgCats=sessions.length?Math.round(sessions.reduce((a,b)=>a+b.catCount,0)/sessions.length*10)/10:0;
   const lastSeen=sessions.length?new Date(sessions[sessions.length-1].ts).toLocaleDateString("en-PH",{month:"short",day:"numeric",year:"numeric"}):"—";
-  const fd=s.fieldData||{};
-  const stageRows=Object.keys(STAGES).filter(st=>fd[st]).map(st=>{
-    const fields=FIELDS.filter(f=>(fd[st][f]||[]).length>=MIN);if(!fields.length)return"";
-    return`<div class="avg-row"><div class="avg-row-stage">${STAGES[st].label} · ${STAGES[st].range}</div><div style="display:flex;flex-wrap:wrap;">${fields.map(f=>{const arr=fd[st][f];const avg=Math.round(arr.reduce((a,b)=>a+b,0)/arr.length);return`<span class="avg-field">${LABELS[f].split(" ")[0]}: <span>PHP ${avg.toLocaleString()}</span> <span style="opacity:.45">(${arr.length})</span></span>`;}).join("")}</div></div>`;
-  }).filter(Boolean).join("");
-  el.innerHTML=`<div class="admin-panel">
-    <h3>Owner dashboard</h3>
-    <div class="admin-grid">
-      <div class="am"><div class="am-label">Visits</div><div class="am-val">${s.visits||0}</div></div>
-      <div class="am"><div class="am-label">Sessions</div><div class="am-val">${sessions.length}</div></div>
-      <div class="am"><div class="am-label">TikTok clicks</div><div class="am-val">${clicks.length}</div></div>
-      <div class="am"><div class="am-label">Avg budget</div><div class="am-val" style="font-size:13px;">PHP ${avgBudget.toLocaleString()}</div></div>
-      <div class="am"><div class="am-label">Avg cats</div><div class="am-val">${avgCats}</div></div>
-      <div class="am"><div class="am-label">Last active</div><div class="am-val" style="font-size:12px;">${lastSeen}</div></div>
-    </div>
-    <div class="admin-section">
-      <div class="admin-section-label">Breeds seen</div>
-      <div class="admin-list">${(s.breeds||[]).length?s.breeds.map(b=>`<span class="admin-tag">${b}</span>`).join(""):`<span style="font-size:12px;color:#848b96;">None yet</span>`}</div>
-    </div>
-    <div class="admin-section" style="margin-top:10px;">
-      <div class="admin-section-label">Stages seen</div>
-      <div class="admin-list">${(s.stages||[]).length?s.stages.map(st=>`<span class="admin-tag stage-tag">${STAGES[st]?STAGES[st].label:st}</span>`).join(""):`<span style="font-size:12px;color:#848b96;">None yet</span>`}</div>
-    </div>
-    ${stageRows?`<div class="admin-section" style="margin-top:12px;"><div class="admin-section-label">Live averages <span style="font-weight:400;text-transform:none;letter-spacing:0;">(min. ${MIN} entries per field)</span></div><div class="avgs-grid">${stageRows}</div></div>`:`<p style="font-size:12px;color:#848b96;margin-top:12px;">Live averages unlock at ${MIN}+ entries per field per stage.</p>`}
-    <button class="admin-clear" onclick="clearStats()">Clear all data</button>
-  </div>`;
+  el.innerHTML=`<div class="admin-panel"><h3>Owner dashboard</h3><div class="admin-grid"><div class="am"><div class="am-label">Visits</div><div class="am-val">${s.visits||0}</div></div><div class="am"><div class="am-label">Sessions</div><div class="am-val">${sessions.length}</div></div><div class="am"><div class="am-label">TikTok clicks</div><div class="am-val">${clicks.length}</div></div><div class="am"><div class="am-label">Avg budget</div><div class="am-val" style="font-size:13px;">PHP ${avgBudget.toLocaleString()}</div></div><div class="am"><div class="am-label">Avg cats</div><div class="am-val">${avgCats}</div></div><div class="am"><div class="am-label">Last active</div><div class="am-val" style="font-size:12px;">${lastSeen}</div></div></div><div class="admin-section"><div class="admin-section-label">Breeds seen</div><div class="admin-list">${(s.breeds||[]).length?s.breeds.map(b=>`<span class="admin-tag">${b}</span>`).join(""):`<span style="font-size:12px;color:#848b96;">None yet</span>`}</div></div><div class="admin-section" style="margin-top:10px;"><div class="admin-section-label">Stages seen</div><div class="admin-list">${(s.stages||[]).length?s.stages.map(st=>`<span class="admin-tag stage-tag">${STAGES[st]?STAGES[st].label:st}</span>`).join(""):`<span style="font-size:12px;color:#848b96;">None yet</span>`}</div></div><div class="admin-section" style="margin-top:10px;"><div class="admin-section-label">Conditions seen</div><div class="admin-list">${(s.conditions||[]).length?s.conditions.map(c=>`<span class="admin-tag stage-tag">${c}</span>`).join(""):`<span style="font-size:12px;color:#848b96;">None yet</span>`}</div></div><button class="admin-clear" onclick="clearStats()">Clear all data</button></div>`;
 }
-function clearStats(){lsSet("catcalc_stats",null);liveAverages={};renderCatList();renderAdmin();}
+function clearStats(){lsSet("catcalc2_stats",null);renderAdmin();}
 
 trackVisit();
-const initStats=loadStats();
-liveAverages=computeAverages(initStats.fieldData||{});
 addCat();
 </script>
 </body>
